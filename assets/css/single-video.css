@@ -1,0 +1,163 @@
+.negv-single {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 32px 16px;
+}
+
+.negv-single__title {
+	font-size: 24px;
+	line-height: 1.4;
+	margin: 0 0 20px;
+}
+
+.negv-single__player {
+	margin: 0 0 24px;
+}
+
+.negv-single__video {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+	background: #000;
+	contain: layout paint;
+}
+
+.negv-single__content {
+	font-size: 16px;
+	line-height: 1.8;
+}
+
+.negv-single__actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px;
+	margin: 0 0 32px;
+}
+
+.negv-action {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	border: 1px solid #d5d9dd;
+	border-radius: 8px;
+	background: #fff;
+	color: #333;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1;
+	padding: 10px 16px;
+	cursor: pointer;
+	text-decoration: none;
+	transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.negv-action:hover,
+.negv-action:focus-visible {
+	border-color: #2271b1;
+	color: #2271b1;
+}
+
+.negv-action:focus-visible {
+	outline: 3px solid #2271b1;
+	outline-offset: 2px;
+}
+
+.negv-action__icon {
+	position: relative;
+	display: inline-flex;
+	font-size: 16px;
+	line-height: 1;
+}
+
+.negv-action__icon img,
+.negv-action__icon svg {
+	display: block;
+}
+
+.negv-action--like .negv-like-full,
+.negv-action--like .negv-like-empty {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.negv-action--like .negv-like-full {
+	visibility: hidden;
+}
+
+.negv-action--like.is-liked {
+	border-color: #d63638;
+	color: #d63638;
+	background: #fff5f5;
+}
+
+.negv-action--like.is-liked .negv-like-empty {
+	visibility: hidden;
+}
+
+.negv-action--like.is-liked .negv-like-full {
+	visibility: visible;
+}
+
+.negv-action--like.is-loading {
+	opacity: 0.6;
+	pointer-events: none;
+}
+
+.negv-action--like.is-locked {
+	opacity: 0.5;
+	cursor: not-allowed;
+	border-color: #d63638;
+	color: #d63638;
+	background: #fff5f5;
+}
+
+.negv-action--like.is-locked::after {
+	content: attr(data-locked-text);
+	margin-inline-start: 4px;
+	font-size: 12px;
+}
+
+.negv-action--like:disabled {
+	opacity: 0.55;
+	cursor: not-allowed;
+}
+
+.negv-action--like:disabled:hover {
+	border-color: #d5d9dd;
+	color: #333;
+}
+
+.negv-action__count {
+	min-width: 20px;
+	text-align: center;
+	font-variant-numeric: tabular-nums;
+}
+
+.negv-action__login-note {
+	font-size: 13px;
+	color: #2271b1;
+	text-decoration: none;
+}
+
+.negv-action__login-note:hover {
+	text-decoration: underline;
+}
+
+.negv-single__comments {
+	margin-top: 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.negv-action {
+		transition: none;
+	}
+}
+
+@media (min-width: 782px) {
+	.negv-single__actions {
+		gap: 12px;
+	}
+}
